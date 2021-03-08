@@ -47,7 +47,7 @@ class Channel_Engine_Product_Feed extends Channel_Engine_Base_Class{
         if($product->managing_stock()) return $product->get_stock_quantity();
 
         // Product is in stock, but no amount is managed, return 100 as a placeholder
-        return 100;
+        return apply_filters('channel_engine_product_placeholder_stock', 100);
     }
 
     public function generate_product_feed() {
